@@ -18,7 +18,7 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   // 3. Link API yang Anda minta
-  const API_URL = 'https://jsonplaceholder.typicode.com/users';
+  const API_URL = 'https://imdbapi.dev/api/users';
 
   // 4. Gunakan useEffect untuk mengambil data dari API saat komponen pertama kali dimuat
   useEffect(() => {

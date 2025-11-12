@@ -39,34 +39,75 @@
   background-color: #f48fb1;
 }
 
-/* Grid untuk user cards */
-.user-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+/* ====== Grid Card Layout ke samping ====== */
+.user-list {
+  display: flex;
+  flex-wrap: wrap; /* agar tetap responsif dan turun ke bawah kalau layar sempit */
   gap: 1.5rem;
-  width: 100%;
-  max-width: 900px;
-  justify-items: center;
+  justify-content: flex-start; /* atau center, kalau mau ditengah */
+  padding: 1rem;
 }
 
-/* Card setiap user */
-.user-card {
-  background: white;
-  width: 220px;
-  height: 260px;
-  border-radius: 16px;
+.user-item {
+  background-color: white;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
   padding: 1rem;
+  width: 220px;          /* lebar tiap kotak */
+  height: 260px;         /* tinggi seragam */
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s ease;
 }
 
-.user-card:hover {
+.user-item:hover {
   transform: translateY(-5px);
 }
+
+.user-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.user-item h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.user-item p {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 0.2rem 0;
+}
+
+.user-item .actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-item button {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.user-item .btn-update {
+  background-color: #fbc02d;
+}
+
+.user-item .btn-delete {
+  background-color: #e53935;
+}
+
 
 .user-avatar {
   width: 70px;

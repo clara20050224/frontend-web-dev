@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==== Global Style ==== */
+body {
+  @apply min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-950 text-white;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Efek glowing pada judul utama */
+h1 {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.6),
+               0 0 40px rgba(56, 189, 248, 0.3);
+}
+
+/* ==== Kartu Pengguna ==== */
+.user-card {
+  @apply relative overflow-hidden rounded-2xl p-6 flex items-center gap-6 transition-all duration-500;
+  background: rgba(30, 41, 59, 0.5); /* glassmorphism effect */
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.user-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 40px rgba(56, 189, 248, 0.4);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+/* Animasi fade-in tiap kartu muncul */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.user-card {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ==== Tombol ==== */
+button {
+  @apply transition-all duration-300 ease-in-out font-semibold rounded-xl;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Warna tombol khusus */
+.btn-green {
+  @apply bg-green-500 hover:bg-green-600 text-white shadow-lg;
+}
+.btn-sky {
+  @apply bg-sky-500 hover:bg-sky-600 text-white shadow-lg;
+}
+.btn-blue {
+  @apply bg-blue-600 hover:bg-blue-700 text-white;
+}
+.btn-red {
+  @apply bg-red-600 hover:bg-red-700 text-white;
+}
+.btn-gray {
+  @apply bg-gray-600 hover:bg-gray-700 text-white;
+}
+
+/* ==== Modal ==== */
+.modal-bg {
+  @apply fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50;
+}
+
+.modal {
+  @apply bg-neutral-900 text-white p-8 rounded-2xl w-96 shadow-2xl border border-sky-500;
+  background: rgba(17, 25, 40, 0.8);
+  backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* ==== Input Form ==== */
+input {
+  @apply w-full mb-3 p-2 rounded-lg bg-neutral-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ==== Scrollbar Custom ==== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06b6d4, #0ea5e9);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0284c7, #0ea5e9);
+}
+
+/* ==== Shadow lembut global ==== */
+.shadow-smooth {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
